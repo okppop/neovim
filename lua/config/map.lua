@@ -1,0 +1,49 @@
+-- local opt = { noremap = true, silent = true }
+-- local opt = { noremap = true }
+
+-- leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- search
+vim.keymap.set('n', '<Leader>/', ':nohlsearch<CR>')
+
+-- terminal
+vim.keymap.set('n', '<Leader>tt', ':terminal<CR>i')
+vim.keymap.set('n', '<Leader>tg', ':terminal<CR>igo tun .<CR>')
+
+-- save & close
+vim.keymap.set('n', '<Leader>s', ':w<CR>')
+vim.keymap.set('n', '<Leader>qq', ':q<CR>')
+vim.keymap.set('n', '<Leader>qw', ':wq<CR>')
+
+-- operate words fast
+vim.keymap.set('n', 'yw', 'yiw')
+vim.keymap.set('n', 'cw', 'ciw')
+vim.keymap.set('n', 'dw', 'diw')
+
+-- tabpage.manage
+vim.keymap.set('n', '<Leader><Tab>n', ':tabnew<CR>')
+vim.keymap.set('n', '<Leader><Tab>q', ':tabclose<CR>')
+-- tabpage.nav
+vim.keymap.set('n', '<Leader><Tab><Tab>', ':tabnext<CR>')
+vim.keymap.set('n', '<Leader><Tab>l', ':tabnext<CR>')
+vim.keymap.set('n', '<Leader><Tab>h', ':tabprevious<CR>')
+-- tabpage.move
+vim.keymap.set('n', '<Leader><Tab><', ':tabmove -<CR>')
+vim.keymap.set('n', '<Leader><Tab>>', ':tabmove +<CR>')
+
+-- window.manage
+vim.keymap.set('n', '<Leader>wn', '<C-w>n')
+vim.keymap.set('n', '<Leader>wv', '<C-w>v')
+vim.keymap.set('n', '<Leader>ws', '<C-w>s')
+vim.keymap.set('n', '<Leader>wq', '<C-w>q')
+-- window.nav
+vim.keymap.set('n', '<Leader>ww', '<C-w>w')
+vim.keymap.set('n', '<Leader>wh', '<C-w>h')
+vim.keymap.set('n', '<Leader>wj', '<C-w>j')
+vim.keymap.set('n', '<Leader>wk', '<C-w>k')
+vim.keymap.set('n', '<Leader>wl', '<C-w>l')
+-- window.move
+vim.keymap.set('n', '<Leader>wx', '<C-w>x')
+vim.keymap.set('n', '<Leader>wr', '<C-w>r')

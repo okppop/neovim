@@ -1,4 +1,5 @@
 -- nav
+vim.cmd.colorscheme('slate')
 vim.o.cursorline = true
 -- nav.bar
 vim.o.showcmd = true
@@ -6,7 +7,7 @@ vim.o.laststatus = 2
 vim.o.wildmenu = true
 -- nav.sidebar
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 vim.o.signcolumn = 'auto'
 
 -- style

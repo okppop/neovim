@@ -32,4 +32,9 @@ require("lazy").setup({
   install = { missing = false },
   -- automatically check for plugin updates
   checker = { enabled = false },
+  performance = {
+	rtp = {
+		reset = false,
+	},
+  },
 })

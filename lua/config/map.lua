@@ -5,8 +5,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- search
-vim.keymap.set('n', '<Leader>/', ':nohlsearch<CR>')
+-- funtion
+vim.keymap.set('n', '<Leader>cs', ':nohlsearch<CR>')
+vim.keymap.set('n', '<Leader>cn', ':set nonumber<CR>')
 
 -- terminal
 vim.keymap.set('n', '<Leader>tt', ':terminal<CR>i')
@@ -14,8 +15,8 @@ vim.keymap.set('n', '<Leader>tg', ':terminal<CR>igo tun .<CR>')
 
 -- save & close
 vim.keymap.set('n', '<Leader>s', ':w<CR>')
-vim.keymap.set('n', '<Leader>qq', ':q<CR>')
-vim.keymap.set('n', '<Leader>qw', ':wq<CR>')
+vim.keymap.set('n', '<Leader>q', ':q<CR>')
+-- vim.keymap.set('n', '<Leader>w', ':wq<CR>')
 
 -- operate words fast
 vim.keymap.set('n', 'yw', 'yiw')

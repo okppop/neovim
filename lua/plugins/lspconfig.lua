@@ -23,6 +23,7 @@ return {
             end,
         })
 		local capabilities = require('blink.cmp').get_lsp_capabilities()
+		-- go
 		vim.lsp.config.gopls = {
 			cmd = { 'gopls' },
 			filetypes = { 'go', 'gomod' },
@@ -30,5 +31,13 @@ return {
 			capabilities = capabilities,
 		}
 		vim.lsp.enable('gopls')
+		-- zig
+		vim.lsp.config.zls = {
+			cmd = { 'zls' },
+			filetypes = { 'zig' },
+			root_markers = { 'build.zig', '.git' },
+			capabilities = capabilities,
+		}
+		vim.lsp.enable('zls')
 	end,
 }

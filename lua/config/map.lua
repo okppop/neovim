@@ -33,6 +33,9 @@ vim.keymap.set('n', '<Leader><Tab>h', ':tabprevious<CR>')
 -- tabpage.move
 vim.keymap.set('n', '<Leader><Tab><', ':tabmove -<CR>')
 vim.keymap.set('n', '<Leader><Tab>>', ':tabmove +<CR>')
+for i = 1, 9 do
+  vim.keymap.set('n', '<Leader>' .. i, '<Cmd>tabnext ' .. i .. '<CR>')
+end
 
 -- window.manage
 vim.keymap.set('n', '<Leader>wn', '<C-w>n')

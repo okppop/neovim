@@ -8,7 +8,7 @@ vim.o.wildmenu = true
 -- nav.sidebar
 vim.o.number = true
 vim.o.relativenumber = false
-vim.o.signcolumn = 'auto'
+vim.o.signcolumn = 'yes'
 
 -- style
 vim.o.syntax = on

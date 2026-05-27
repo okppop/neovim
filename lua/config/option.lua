@@ -1,5 +1,5 @@
 -- nav
-vim.cmd.colorscheme('slate')
+-- vim.cmd.colorscheme('slate')
 vim.o.cursorline = true
 -- nav.bar
 vim.o.showcmd = true

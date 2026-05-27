@@ -30,6 +30,19 @@ return {
 			root_markers = { 'go.mod', '.git' },
 			capabilities = capabilities,
 		}
+		vim.api.nvim_create_autocmd('BufWritePre', {
+			pattern = "*.go",
+			callback = function(ev)
+				vim.lsp.buf.format({
+					bufnr = ev.buf,
+					async = false,
+					timeout_ms = 1000,
+					filter = function(client)
+						return client.name == 'gopls'
+					end,
+				})
+			end,
+		})
 		vim.lsp.enable('gopls')
 		-- zig
 		vim.lsp.config.zls = {

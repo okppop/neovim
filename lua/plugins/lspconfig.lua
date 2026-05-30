@@ -51,6 +51,19 @@ return {
 			root_markers = { 'build.zig', '.git' },
 			capabilities = capabilities,
 		}
+		vim.api.nvim_create_autocmd('BufWritePre', {
+			pattern = "*.zig",
+			callback = function(ev)
+				vim.lsp.buf.format({
+					bufnr = ev.buf,
+					async = false,
+					timeout_ms = 1000,
+					filter = function(client)
+						return client.name == 'zls'
+					end,
+				})
+			end,
+		})
 		vim.lsp.enable('zls')
 	end,
 }

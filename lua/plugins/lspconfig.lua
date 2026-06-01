@@ -10,6 +10,8 @@ return {
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('UserLspConfig', {}),
             callback = function(ev)
+				vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = ev.buf, desc = 'goto definition' })
                 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = 'goto declaration' })
                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = ev.buf, desc = 'find references' })
@@ -20,15 +22,33 @@ return {
                 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { buffer = ev.buf, desc = 'previous diagnostic' })
                 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = ev.buf, desc = 'next diagnostic' })
                 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = 'hover documentation' })
+				vim.keymap.set('n', '<Leader>ct', function()
+					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf }), { bufnr = ev.buf })
+				end)
             end,
         })
 		local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 		-- go
 		vim.lsp.config.gopls = {
 			cmd = { 'gopls' },
 			filetypes = { 'go', 'gomod' },
 			root_markers = { 'go.mod', '.git' },
 			capabilities = capabilities,
+			settings = {
+				gopls = {
+					hints = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						compositeLiteralTypes = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						ignoredError = true,
+						parameterNames = false,
+						rangeVariableTypes = true,
+					},
+				},
+			},
 		}
 		vim.api.nvim_create_autocmd('BufWritePre', {
 			pattern = "*.go",
@@ -44,6 +64,7 @@ return {
 			end,
 		})
 		vim.lsp.enable('gopls')
+
 		-- zig
 		vim.lsp.config.zls = {
 			cmd = { 'zls' },

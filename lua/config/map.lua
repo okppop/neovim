@@ -7,7 +7,9 @@ vim.g.maplocalleader = "\\"
 
 -- funtion
 vim.keymap.set('n', '<Leader>cs', ':nohlsearch<CR>')
-vim.keymap.set('n', '<Leader>cn', ':set nonumber<CR>')
+vim.keymap.set('n', '<Leader>cn', function()
+	vim.opt.number = not vim.opt.number:get()
+end)
 
 -- terminal
 vim.keymap.set('n', '<Leader>tt', ':terminal<CR>i')

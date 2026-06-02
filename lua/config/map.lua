@@ -1,6 +1,11 @@
 -- local opt = { noremap = true, silent = true }
 -- local opt = { noremap = true }
 
+-- env
+if vim.loop.os_uname().sysname == "Darwin" then
+	vim.env.PATH = "/opt/homebrew/bin/:" .. vim.env.PATH
+end
+
 -- leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"

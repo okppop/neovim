@@ -11,19 +11,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- funtion
-vim.keymap.set('n', '<Leader>cs', ':nohlsearch<CR>')
+vim.keymap.set('n', '<Leader>cs', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<Leader>cn', function()
 	vim.opt.number = not vim.opt.number:get()
 end)
 
 -- terminal
-vim.keymap.set('n', '<Leader>tt', ':terminal<CR>i')
-vim.keymap.set('n', '<Leader>tg', ':terminal<CR>igo tun .<CR>')
+vim.keymap.set('n', '<Leader>tt', '<cmd>terminal<CR>i')
+vim.keymap.set('n', '<Leader>tg', '<cmd>terminal<CR>igo tun .<CR>')
 
 -- save & close
-vim.keymap.set('n', '<Leader>s', ':w<CR>')
-vim.keymap.set('n', '<Leader>q', ':q<CR>')
--- vim.keymap.set('n', '<Leader>w', ':wq<CR>')
+vim.keymap.set('n', '<Leader>s', '<cmd>w<CR>')
+vim.keymap.set('n', '<Leader>q', '<cmd>q<CR>')
+-- vim.keymap.set('n', '<Leader>w', '<cmd>wq<CR>')
 
 -- operate words fast
 vim.keymap.set('n', 'yw', 'yiw')
@@ -31,17 +31,17 @@ vim.keymap.set('n', 'cw', 'ciw')
 vim.keymap.set('n', 'dw', 'diw')
 
 -- tabpage.manage
-vim.keymap.set('n', '<Leader><Tab>n', ':tabnew<CR>')
-vim.keymap.set('n', '<Leader><Tab>q', ':tabclose<CR>')
+vim.keymap.set('n', '<Leader><Tab>n', '<cmd>tabnew<CR>')
+vim.keymap.set('n', '<Leader><Tab>q', '<cmd>tabclose<CR>')
 -- tabpage.nav
-vim.keymap.set('n', '<Leader><Tab><Tab>', ':tabnext<CR>')
-vim.keymap.set('n', '<Leader><Tab>l', ':tabnext<CR>')
-vim.keymap.set('n', '<Leader><Tab>h', ':tabprevious<CR>')
+vim.keymap.set('n', '<Leader><Tab><Tab>', '<cmd>tabnext<CR>')
+vim.keymap.set('n', '<Leader><Tab>l', '<cmd>tabnext<CR>')
+vim.keymap.set('n', '<Leader><Tab>h', '<cmd>tabprevious<CR>')
 -- tabpage.move
-vim.keymap.set('n', '<Leader><Tab><', ':tabmove -<CR>')
-vim.keymap.set('n', '<Leader><Tab>>', ':tabmove +<CR>')
+vim.keymap.set('n', '<Leader><Tab><', '<cmd>tabmove -<CR>')
+vim.keymap.set('n', '<Leader><Tab>>', '<cmd>tabmove +<CR>')
 for i = 1, 9 do
-  vim.keymap.set('n', '<Leader>' .. i, '<Cmd>tabnext ' .. i .. '<CR>')
+  vim.keymap.set('n', '<Leader>' .. i, '<cmd>tabnext ' .. i .. '<CR>')
 end
 
 -- window.manage
@@ -58,3 +58,8 @@ vim.keymap.set('n', '<Leader>wl', '<C-w>l')
 -- window.move
 vim.keymap.set('n', '<Leader>wx', '<C-w>x')
 vim.keymap.set('n', '<Leader>wr', '<C-w>r')
+-- window.resize
+vim.keymap.set("n", "<D-h>", "<cmd>vertical resize -2<CR>")
+vim.keymap.set("n", "<D-l>", "<cmd>vertical resize +2<CR>")
+vim.keymap.set("n", "<D-j>", "<cmd>resize -2<CR>")
+vim.keymap.set("n", "<D-k>", "<cmd>resize +2<CR>")

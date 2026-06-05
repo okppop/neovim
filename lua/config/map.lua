@@ -10,6 +10,10 @@ end
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- nav
+vim.keymap.set('n', '<Leader>j', 'Lzz')
+vim.keymap.set('n', '<Leader>k', 'Hzz')
+
 -- funtion
 vim.keymap.set('n', '<Leader>cs', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<Leader>cn', function()

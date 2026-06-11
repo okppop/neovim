@@ -1,6 +1,9 @@
 return {
 	'nvim-telescope/telescope.nvim',
 	-- tag = '0.1.8',
+	cond = function()
+		return not vim.g.vscode
+	end,
 	lazy = true,
 	dependencies = {
 		'nvim-lua/plenary.nvim',

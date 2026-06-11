@@ -1,5 +1,8 @@
 return {
 	'neovim/nvim-lspconfig',
+	cond = function()
+		return not vim.g.vscode
+	end,
 	lazy = false,
 	priority = 99,
 	dependencies = {

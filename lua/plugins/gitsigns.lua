@@ -1,5 +1,8 @@
 return {
 	'lewis6991/gitsigns.nvim',
+	cond = function()
+		return not vim.g.vscode
+	end,
 	event = 'VeryLazy',
 	opts = {
 		on_attach = function(bufnr)
@@ -66,4 +69,3 @@ return {
 		require('gitsigns').setup(opt)
 	end,
 }
-

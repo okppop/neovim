@@ -40,5 +40,6 @@ vim.o.autowrite = false
 vim.o.splitright = true
 vim.o.splitbelow = true
 
--- mouse
+-- system
 vim.o.mouse = ''
+vim.o.clipboard = 'unnamedplus'

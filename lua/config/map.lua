@@ -27,6 +27,7 @@ vim.keymap.set('n', '<Leader>tg', '<cmd>terminal<CR>igo tun .<CR>')
 -- run
 vim.keymap.set('n', '<Leader>rm', '<cmd>!make<CR>')
 vim.keymap.set('n', '<Leader>rg', '<cmd>!go run .<CR>')
+vim.keymap.set('n', '<Leader>rc', '<cmd>!gcc main.c -o ./main && ./main && rm -f ./main<CR>')
 
 -- save & close
 vim.keymap.set('n', '<Leader>s', '<cmd>w<CR>')
